@@ -1,0 +1,11 @@
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="4.09" y="10" width="16" height="10" rx="1" fill="#5C5CD6"/>
+<rect x="5.09" y="11" width="14" height="8" rx="1" fill="#EAEAF9"/>
+<rect x="4.09" y="10" width="16" height="10" rx="1" stroke="#5C5CD6" stroke-width="2"/>
+<path d="M5.1 5C5.1 2.79086 6.89086 1 9.1 1H15.08C17.2891 1 19.08 2.79086 19.08 5C19.08 5 18.1846 5 17.08 5H7.1C5.99543 5 5.1 5 5.1 5ZM19.08 5H5.1H19.08ZM5.1 5V3V5ZM19.08 3V5V3Z" fill="#5C5CD6" mask="url(#path-3-inside-1_1_7)"/>
+<mask id="path-5-inside-2_1_7" fill="white">
+<path d="M4.11 8C4.11 6.89543 5.00543 6 6.11 6H18.08C19.1846 6 20.08 6.89543 20.08 8V8H4.11V8Z"/>
+</mask>
+<path d="M4.11 8C4.11 6.89543 5.00543 6 6.11 6H18.08C19.1846 6 20.08 6.89543 20.08 8V8H4.11V8Z" fill="#5C5CD6"/>
+<path d="M4.11 8C4.11 5.79086 5.90086 4 8.11 4H16.08C18.2891 4 20.08 5.79086 20.08 8C20.08 8 19.1846 8 18.08 8H6.11C5.00543 8 4.11 8 4.11 8ZM20.08 8H4.11H20.08ZM4.11 8V6V8ZM20.08 6V8V6Z" fill="#5C5CD6" mask="url(#path-5-inside-2_1_7)"/>
+</svg>
