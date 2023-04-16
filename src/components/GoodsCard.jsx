@@ -1,6 +1,6 @@
 const GoodsCard = () => {
     return (
-        <div className="forShad h-[480px] w-[230px] ss:w-[250px] hover:shadow-lg mb-[50px] rounded-[10px] ">
+        <div lassName="forShad h-[480px] w-[230px] ss:w-[250px] hover:shadow-lg mb-[50px] rounded-[10px] select-none ">
 
             <div className="cardImg">
                 <img className="w-[26px]" src="/img/likeImg.svg" alt="" />

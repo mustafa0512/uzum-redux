@@ -19,6 +19,7 @@ import { BsMap } from 'react-icons/bs'
 import { AiOutlineSearch, AiOutlineQuestionCircle } from 'react-icons/ai'
 import { GoMail } from 'react-icons/go'
 import { BsPhone } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 
@@ -97,8 +98,9 @@ const Header = () => {
                                 <MenuIcon sx={{ color: '#000' }} />
                             </IconButton>
                             <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-
-                                <img src="/img/uzumLogo.svg" className='w-[130px] ml-[-10px]' alt="" />
+                                <NavLink to={'/'}>
+                                    <img src="/img/uzumLogo.svg" className='w-[130px] ml-[-10px]' alt="" />
+                                </NavLink>
 
                                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
 
@@ -143,7 +145,7 @@ const Header = () => {
                         </DrawerHeader>
 
                         <div className='bg-[#F4F5F5FF] h-[6px] w-full'></div>
-                        
+
                         <List>
                             <ListItem disablePadding>
                                 <ListItemButton>
@@ -228,7 +230,9 @@ const Header = () => {
 
             <div className="hidden md:flex w-full  items-center justify-between py-2 px-2 max-w-[1440px] m-auto">
 
-                <img src="/img/uzumLogo.svg" alt="" />
+                <NavLink to={'/'}>
+                    <img src="/img/uzumLogo.svg" alt="" />
+                </NavLink>
 
                 <div className="bg-[#EBEBFAFF] h-[45px] ml-[30px]  rounded-[4px] flex items-center justify-center">
                     <img className='w-[30px] ml-[20px]' src="/img/catalogImg.svg" alt="" />

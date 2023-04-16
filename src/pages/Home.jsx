@@ -4,6 +4,7 @@ import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import GoodsCard from "../components/goodsCard";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -32,12 +33,12 @@ const Home = () => {
                 <img className="w-[10px] mt-[5px] ml-[20px]" src="/img/catArrow.svg" alt="" />
             </div>
 
-            <div className="grid xs:grid-cols-2 vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
+            <div className="grid xs:grid-cols-2 gap-[20px] vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -45,12 +46,12 @@ const Home = () => {
                 <img className="w-[10px] mt-[5px] ml-[20px]" src="/img/catArrow.svg" alt="" />
             </div>
 
-            <div className="grid xs:grid-cols-2 vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
+            <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -58,12 +59,12 @@ const Home = () => {
                 <img className="w-[10px] mt-[5px] ml-[20px]" src="/img/catArrow.svg" alt="" />
             </div>
 
-            <div className="grid xs:grid-cols-2 vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
+            <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -71,12 +72,12 @@ const Home = () => {
                 <img className="w-[10px] mt-[5px] ml-[20px]" src="/img/catArrow.svg" alt="" />
             </div>
 
-            <div className="grid xs:grid-cols-2 vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
+            <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -84,15 +85,13 @@ const Home = () => {
                 <img className="w-[10px] mt-[5px] ml-[20px]" src="/img/catArrow.svg" alt="" />
             </div>
 
-            <div className="grid xs:grid-cols-2 vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
-                <GoodsCard />
+            <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                <NavLink to={'/product'}><GoodsCard /></NavLink>
             </div>
-
-
 
         </>
     );
