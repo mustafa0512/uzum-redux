@@ -105,8 +105,12 @@ const Header = () => {
                                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
 
                                     <img src="/img/profImg.svg" className='w-[16px]' alt="" />
-                                    <img src="/img/likeImg.svg" className='w-[18px] xs:ml-[14] ss:ml-[16]  ml-[10px]' alt="" />
-                                    <img src="/img/basketImg.svg" className='w-[16px] xs:ml-[16] ss:ml-[18]  ml-[12px]' alt="" />
+                                    <NavLink to={'/liked'}>
+                                        <img src="/img/likeImg.svg" className='w-[18px] xs:ml-[14] ss:ml-[16]  ml-[10px]' alt="" />
+                                    </NavLink>
+                                    <NavLink to={'/basket'}>
+                                        <img src="/img/basketImg.svg" className='w-[16px] xs:ml-[16] ss:ml-[18]  ml-[12px]' alt="" />
+                                    </NavLink>
 
                                 </Box>
                             </Box>
@@ -241,7 +245,7 @@ const Header = () => {
 
                 <form className="flex items-center h-[45px] ml-[20px] border-[1px] border-[rgba(118, 121, 127, 0.3)] rounded-[4px] px-2">
 
-                    <input type="text" className="w-[450px] h-[30px] text-[#757575]" placeholder="Искать товары и категории" />
+                    <input type="text" className="w-[450px] h-[30px] text-[#757575] outline-none" placeholder="Искать товары и категории" />
                     <img className="w-[20px]" src="/img/searchImg.svg" alt="" />
 
                 </form>
@@ -252,13 +256,21 @@ const Header = () => {
                 </div>
 
                 <div className=" h-[45px] w-[120px] lg:ml-[30px] rounded-[4px] flex items-center justify-center">
-                    <img src="/img/likeImg.svg" className="w-[20px] h-[20px]" alt="" />
-                    <p className="text-[#000] ml-[10px] hidden lg:block">Избранное</p>
+                    <NavLink to={'/liked'}>
+                        <img src="/img/likeImg.svg" className="w-[20px] h-[20px]" alt="" />
+                    </NavLink>
+                    <NavLink to={'/liked'}>
+                        <p className="text-[#000] ml-[10px] hidden lg:block">Избранное</p>
+                    </NavLink>
                 </div>
 
                 <div className=" h-[45px] w-[120px] lg:ml-[30px] rounded-[4px] flex items-center justify-center">
-                    <img src="/img/basketImg.svg" className="w-[20px] h-[20px]" alt="" />
-                    <p className="text-[#000] ml-[10px] hidden lg:block">Корзина</p>
+                    <NavLink to={'/basket'}>
+                        <img src="/img/basketImg.svg" className="w-[20px] h-[20px]" alt="" />
+                    </NavLink>
+                    <NavLink to={'/basket'}>
+                        <p className="text-[#000] ml-[10px] hidden lg:block">Корзина</p>
+                    </NavLink>
                 </div>
 
             </div>
