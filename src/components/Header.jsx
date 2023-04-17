@@ -12,7 +12,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { useState } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CloseIcon from '@mui/icons-material/Close';
 import { CiLocationOn } from 'react-icons/ci'
 import { BsMap } from 'react-icons/bs'
@@ -20,6 +19,7 @@ import { AiOutlineSearch, AiOutlineQuestionCircle } from 'react-icons/ai'
 import { GoMail } from 'react-icons/go'
 import { BsPhone } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom';
+import Accordion from './Accordion';
 
 const Header = () => {
 
@@ -151,15 +151,7 @@ const Header = () => {
                         <div className='bg-[#F4F5F5FF] h-[6px] w-full'></div>
 
                         <List>
-                            <ListItem disablePadding>
-                                <ListItemButton>
-                                    <ListItemIcon>
-                                        <img src="/img/catalogImg.svg" alt="" />
-                                    </ListItemIcon>
-                                    <p className="text-[#3333CC] ml-[10px]">Каталог </p>
-                                </ListItemButton>
-                                <KeyboardArrowDownIcon sx={{ color: '#3333CC', marginRight: '10px' }} />
-                            </ListItem>
+                            <Accordion/>
                         </List>
 
                         <div className='bg-[#F4F5F5FF] h-[6px] w-full'></div>
