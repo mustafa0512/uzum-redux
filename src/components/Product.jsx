@@ -1,4 +1,14 @@
+import { useSelector } from "react-redux";
+
 const Product = () => {
+    
+    const data = useSelector(state => state.goods.data)
+
+    console.log(data[0]);
+
+    const id = window.location.href.split('/').at(-1)
+    console.log(id);  
+
     return (
         <>
             <div className="sm:flex mb-[50px]">

@@ -4,9 +4,17 @@ import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import GoodsCard from "../components/goodsCard";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 const Home = () => {
+
+    const data = useSelector(state => state.goods.data)
+    const { state } = useLocation();
+    const arr = Array(data).at(-1)
+    console.log(arr);
+
     return (
         <>
             <Swiper
@@ -34,11 +42,11 @@ const Home = () => {
             </div>
 
             <div className="grid xs:grid-cols-2 gap-[20px] vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
+
+                {
+                    arr.slice(0, 5).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                }
+
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -47,11 +55,9 @@ const Home = () => {
             </div>
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                {
+                    arr.slice(6, 11).map((item, ind) => <NavLink to={`/product/${item.id}`} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                }
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -60,11 +66,9 @@ const Home = () => {
             </div>
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                {
+                    arr.slice(12, 17).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                }
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -73,11 +77,9 @@ const Home = () => {
             </div>
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                {
+                    arr.slice(18, 23).map((item, ind) => <NavLink to={'/product'}><GoodsCard key={ind} item={item} /></NavLink>)
+                }
             </div>
 
             <div className="flex items-center h-[20px] mb-[30px] mt-[30px]">
@@ -86,11 +88,9 @@ const Home = () => {
             </div>
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
-                <NavLink to={'/product'}><GoodsCard /></NavLink>
+                {
+                    arr.slice(24, 29).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                }
             </div>
 
         </>
