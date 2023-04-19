@@ -1,9 +1,8 @@
-const GoodsCard = ({item, id}) => {
-    console.log(item?.id);
+const GoodsCard = ({ item, id }) => {
     return (
         <div lassName="forShad h-[480px] w-[230px] ss:w-[250px] hover:shadow-lg mb-[50px] rounded-[10px] select-none ">
 
-            <div className={`cardImg w-[100%] h-[300px] bg-[url('${item?.media[0]}')] bg-cover bg-cover bg-center p-[10px] rounded-[10px] overflow-hidden flex justify-end items-start bg-[red]  `}>
+            <div style={{backgroundImage: `url(${item?.media[0]})`}} className={`cardImg w-[100%] h-[300px] bg-cover bg-cover bg-center p-[10px] rounded-[10px] overflow-hidden flex justify-end items-start bg-[red]  `}>
                 <img className="w-[26px]" src="/img/likeImg.svg" alt="" />
             </div>
 

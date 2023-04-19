@@ -13,7 +13,6 @@ const Home = () => {
     const data = useSelector(state => state.goods.data)
     const { state } = useLocation();
     const arr = Array(data).at(-1)
-    console.log(arr);
 
     return (
         <>
