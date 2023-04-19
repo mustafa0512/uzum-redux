@@ -44,7 +44,7 @@ const Home = () => {
             <div className="grid xs:grid-cols-2 gap-[20px] vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
 
                 {
-                    arr.slice(0, 5).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                    arr.slice(0, 5).map((item, ind) => <NavLink to={`/product/${item.id}`} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
                 }
 
             </div>
@@ -67,7 +67,7 @@ const Home = () => {
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
                 {
-                    arr.slice(12, 17).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                    arr.slice(12, 17).map((item, ind) => <NavLink to={`/product/${item.id}`} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
                 }
             </div>
 
@@ -78,7 +78,7 @@ const Home = () => {
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
                 {
-                    arr.slice(18, 23).map((item, ind) => <NavLink to={'/product'}><GoodsCard key={ind} item={item} /></NavLink>)
+                    arr.slice(18, 23).map((item, ind) => <NavLink to={`/product/${item.id}`}><GoodsCard key={ind} item={item} /></NavLink>)
                 }
             </div>
 
@@ -89,7 +89,7 @@ const Home = () => {
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ">
                 {
-                    arr.slice(24, 29).map((item, ind) => <NavLink to={'/product'} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
+                    arr.slice(24, 29).map((item, ind) => <NavLink to={`/product/${item.id}`} id={state?.id}><GoodsCard key={ind} item={item} /></NavLink>)
                 }
             </div>
 
