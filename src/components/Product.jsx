@@ -16,11 +16,16 @@ const Product = () => {
             <div className="sm:flex mb-[50px]">
                 <div className="flex justify-center">
                     <div className="barImgs mr-[10px] h-[400px] md:h-[500px] overflow-hidden overflow-scroll  min-w-[80px] hidden xs:block">
+
+                        {
+                            fillId.map((item) => <img style={{ backgroundImage: `url(${item?.media})` }} className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img> )
+                        }
+
+                        {/* <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
                         <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
                         <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
                         <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
-                        <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
-                        <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img>
+                        <img className="w-[80px] h-[100px] bg-[#fff] mb-[10px] rounded-[8px]" src="/img/phoneImg.png"></img> */}
                     </div>
                     <img className="h-[400px] min-w-[310px] md:h-[500px] md:min-w-[380px]  rounded-[20px]" src={fillId[0]?.media[0]}></img>
                 </div>

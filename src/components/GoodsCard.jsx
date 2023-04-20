@@ -1,9 +1,21 @@
-const GoodsCard = ({ item, id }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { addLiked } from "../features/liked/likedSlise";
+import { NavLink } from "react-router-dom";
+
+const GoodsCard = ({ item }) => {
+
+    const liked_id = useSelector(state => state.liked.data_id)
+    console.log(liked_id);
+    const dispatch = useDispatch()
+
     return (
         <div lassName="forShad h-[480px] w-[230px] ss:w-[250px] hover:shadow-lg mb-[50px] rounded-[10px] select-none ">
 
-            <div style={{backgroundImage: `url(${item?.media[0]})`}} className={`cardImg w-[100%] h-[300px] bg-cover bg-cover bg-center p-[10px] rounded-[10px] overflow-hidden flex justify-end items-start bg-[red]  `}>
-                <img className="w-[26px]" src="/img/likeImg.svg" alt="" />
+            <div style={{ backgroundImage: `url(${item?.media[0]})` }} className={`cardImg w-[100%] h-[300px] bg-cover bg-cover bg-center p-[10px] rounded-[10px] overflow-hidden flex justify-end items-start bg-[red]  `}>
+                <NavLink to={`/`} >
+                <img onClick={() => dispatch(addLiked(item?.id))}  className="w-[26px] z-10" src={`${liked_id.includes(item?.id)? '/img/addLikedImg.svg' : '/img/likeImg.svg'}`} alt="" />
+                    {/* <div onClick={() => dispatch(addLiked(item?.id))} className={`${liked_id.includes(item?.id) ? 'bg-[blue]' : 'bg-[black]'} w-[26px] relative h-[26px] z-100`}></div> */}
+                </NavLink>
             </div>
 
             <div className="px-3">
