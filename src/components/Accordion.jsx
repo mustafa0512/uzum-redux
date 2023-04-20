@@ -9,7 +9,7 @@ const Accordion = () => {
     return (
 
         <>
-            <div className={`${isOpen ? 'block' : 'block'} bg-[#F4F5F5FF] h-[4px] w-full`}></div>
+            <div className={`${isOpen ? 'block' : 'hidden'} bg-[#F4F5F5FF] h-[4px] w-full`}></div>
 
             <div onClick={() => setIsOpen(!isOpen)} className={` ${isOpen ? " h-fit" : "h-[45px]"} overflow-hidden px-4 py-2  border-indigo-200`} >
                 <div className="accTop w-full flex items-center justify-between mb-[20px]" >
@@ -30,7 +30,7 @@ const Accordion = () => {
                 </div>
             </div>
 
-            <div className={`${isOpen ? 'block' : 'block'} bg-[#F4F5F5FF] h-[4px] w-full`}></div>
+            <div className={`${isOpen ? 'block' : 'hidden'} bg-[#F4F5F5FF] h-[4px] w-full`}></div>
 
         </>
 

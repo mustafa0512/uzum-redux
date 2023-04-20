@@ -25,6 +25,7 @@ const Header = () => {
 
     const availableScreenWidth = window.screen.availWidth
     const drawerWidth = availableScreenWidth;
+    const [isOpen, setIsOpen] = useState(false)
 
     const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
         ({ theme, open }) => ({
@@ -151,7 +152,7 @@ const Header = () => {
                         <div className='bg-[#F4F5F5FF] h-[6px] w-full'></div>
 
                         <List>
-                            <Accordion/>
+                            <Accordion />
                         </List>
 
                         <div className='bg-[#F4F5F5FF] h-[6px] w-full'></div>
@@ -224,13 +225,13 @@ const Header = () => {
 
             </div>
 
-            <div className="hidden md:flex w-full  items-center justify-between py-2 px-2 max-w-[1440px] m-auto">
+            <div className={`${isOpen ? 'h-[400px]' : 'h-fit'} hidden md:flex w-full  justify-between py-2 px-2 max-w-[1440px] m-auto`}>
 
                 <NavLink to={'/'}>
                     <img src="/img/uzumLogo.svg" alt="" />
                 </NavLink>
 
-                <div className="bg-[#EBEBFAFF] h-[45px] ml-[30px]  rounded-[4px] flex items-center justify-center">
+                <div onClick={() => setIsOpen(!isOpen)} className="bg-[#EBEBFAFF] select-none h-[45px] ml-[30px] rounded-[4px] flex items-center justify-center">
                     <img className='w-[30px] ml-[20px]' src="/img/catalogImg.svg" alt="" />
                     <p className="text-[#3333CC] ml-[10px] mr-[25px] text-[14px]">Каталог</p>
                 </div>

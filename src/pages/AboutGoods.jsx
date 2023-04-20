@@ -24,7 +24,6 @@ const AboutGoods = () => {
                 {
                     arr.slice(0, 5).map((item, ind) => <NavLink to={`/product/${item.id}`} ><GoodsCard key={ind} item={item} /></NavLink>)
                 }
-
             </div>
         </>
     );

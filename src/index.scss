@@ -13,10 +13,6 @@
     background: linear-gradient(87.38deg, #9643FF 1.53%, #5200BA 98.76%);
     color: #fff;
     border-radius: 30px;
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .swiper-slide img {
@@ -99,13 +95,12 @@
 }
 
 .cardImg {
-    width: 100%;
+    width: 250px;
     height: 300px;
-    // background-image: url(../public/img/phoneImg.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 10px ;
+    padding: 10px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -114,5 +109,14 @@
 }
 
 .barImgs::-webkit-scrollbar {
-    display: none    
+    display: none
+}
+
+.swiper-slide:nth-child(2n) {
+    background-color: #44b09e;
+    background-image: linear-gradient(315deg, #44b09e 0%, #e0d2c7 74%);
+}
+
+.forShad::-webkit-scrollbar {
+    display: none
 }
