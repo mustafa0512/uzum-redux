@@ -43,7 +43,7 @@ const Product = () => {
                     <p className="w-[95%] text-[13px] md:text-[16px]">{fillId[0]?.description}</p>
                     <div className="flex items-center mt-[30px]">
                         <button className=" rounded-[7px] text-[12px] md:text-[16px] text-[#fff] bg-[#7000FF] py-2  px-3 xs:px-4">Добавить в корзину</button>
-                        <button onClick={() => liked_id.includes(fillId[0]?.id) ? dispatch(removeLiked(fillId[0]?.id)) : dispatch(addLiked(fillId[0]?.id))} className=" rounded-[7px] text-[12px] md:text-[16px] border-[1px] border-[#7000FF] py-2  px-3 xs:px-4 text-[#7000FF] ml-[30px]">{liked_id.includes(fillId[0]?.id) ? 'убрать из избранных' : 'Добавить в избранное'}</button>
+                        {/* <button onClick={() => liked_id.includes(fillId[0]?.id) ? dispatch(removeLiked(fillId[0]?.id)) : dispatch(addLiked(fillId[0]?.id))} className=" rounded-[7px] text-[12px] md:text-[16px] border-[1px] border-[#7000FF] py-2  px-3 xs:px-4 text-[#7000FF] ml-[30px]">{liked_id.includes(fillId[0]?.id) ? 'убрать из избранных' : 'Добавить в избранное'}</button> */}
                     </div>
                 </div>
             </div>

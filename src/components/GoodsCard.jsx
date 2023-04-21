@@ -12,13 +12,21 @@ const GoodsCard = ({ item }) => {
     const perMonth = Math.round(item?.price / 12)
     const quantity = Math.round(Math.random() * 10)
 
+    const likeItem = () => {
+        if(liked_id.includes(item?.id)) {
+            dispatch(removeLiked(item?.id))
+        } else {
+            dispatch(addLiked(item))
+        }
+    }
+
     return (
         <div lassName="forShad h-[480px] ss:min-w-[250px] hover:shadow-lg mb-[50px] rounded-[10px] select-none ">
 
             <div style={{ backgroundImage: `url(${item?.media[0]})` }} className={`cardImg`}>
 
                 <NavLink to={`/`} >
-                    <img onClick={() => liked_id.includes(item?.id) ? dispatch(removeLiked(item?.id)) : dispatch(addLiked(item?.id))} className="w-[26px] z-10" src={`${liked_id.includes(item?.id) ? '/img/addLikedImg.svg' : '/img/likeImg.svg'}`} alt="" />
+                    <img onClick={likeItem} className="w-[26px] z-10" src={`${liked_id.includes(item?.id) ? '/img/addLikedImg.svg' : '/img/likeImg.svg'}`} alt="" />
                 </NavLink>
 
             </div>
