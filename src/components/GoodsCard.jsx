@@ -1,11 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addLiked, removeLiked } from "../features/liked/likedSlise";
 import { NavLink } from "react-router-dom";
+import { add_to_cart, remove_from_cart } from "../features/cart/cartSlise";
 
 const GoodsCard = ({ item }) => {
 
     const liked_id = useSelector(state => state.liked.data_id)
+    const cart_id = useSelector(state => state.cart.data_id)
+    // console.log(cart_id);
     const dispatch = useDispatch()
+
     const percent = Math.round(item?.price - ((item?.price * item?.salePercentage) / 100))
     const perMonth = Math.round(item?.price / 12)
     const quantity = Math.round(Math.random() * 10)
@@ -15,6 +19,16 @@ const GoodsCard = ({ item }) => {
             dispatch(removeLiked(item?.id))
         } else {
             dispatch(addLiked(item))
+        }
+    }
+
+    const cartItem = () => {
+        if (cart_id.includes(item?.id)) {
+            dispatch(remove_from_cart(item?.id))
+            console.log(item?.id);
+        } else {
+            dispatch(add_to_cart(item))
+            console.log(item);
         }
     }
 
@@ -44,7 +58,7 @@ const GoodsCard = ({ item }) => {
                         <s className={`${percent === item?.price ? 'hidden' : 'block'} text-[#ACACAC] text-[10px] ss:text-[14px] font-medium`}>{percent} сум</s>
                         <p className="text-[#000] text-[14px] ss:text-[18px] font-medium">{item?.price}сум</p>
                     </div>
-                    <div className="w-[35px] h-[35px] rounded-[50%] border-[2px] border-[#ACACAC] flex items-center justify-center ">
+                    <div onClick={cartItem} className={`${cart_id.includes(item?.id) ? 'border-[#7000FF]' : 'border-[#ACACAC]'} w-[35px] h-[35px] rounded-[50%] border-[2px] flex items-center justify-center`}>
                         <img src="/img/forBuyImg.svg" alt="" />
                     </div>
                 </div>
