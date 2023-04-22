@@ -1,16 +1,11 @@
 import { useSelector } from "react-redux";
 import Product from "../components/Product";
 import GoodsCard from "../components/GoodsCard";
-import { NavLink } from "react-router-dom";
-
-
 
 const AboutGoods = () => {
     const data = useSelector(state => state.goods.data)
-    
-
-
     const arr = Array(data).at(-1)
+
     return (
         <>
             <Product />
@@ -22,7 +17,7 @@ const AboutGoods = () => {
 
             <div className="grid xs:grid-cols-2 gap-[20px]  vs:grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 mt-[30px]">
                 {
-                    arr.slice(0, 5).map((item, ind) => <NavLink to={`/product/${item.id}`} ><GoodsCard key={ind} item={item} /></NavLink>)
+                    arr.slice(0, 5).map((item, inx) => <GoodsCard key={inx} item={item} />)
                 }
             </div>
         </>
