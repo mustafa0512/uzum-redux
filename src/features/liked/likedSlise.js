@@ -10,7 +10,7 @@ export const likedSlise = createSlice({
     initialState,
     reducers: {
         removeLiked: (state, action) => {
-            state.data = state.data.filter(item => item.id !== action.payload)
+            state.data = state.data.filter(item => item !== action.payload)
             state.data_id = state.data_id.filter(id => id !== action.payload)
             localStorage.setItem('liked', JSON.stringify(state.data))
             localStorage.setItem('liked_id', JSON.stringify(state.data_id))
