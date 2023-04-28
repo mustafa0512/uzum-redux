@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import AboutGoods from './pages/AboutGoods'
 import Liked from './pages/Liked'
 import Basket from './pages/Basket'
+import Catalog from './components/Catalog'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route  path='/product/:id' element={<AboutGoods />} />
         <Route  path='/liked' element={<Liked />} />
         <Route  path='/basket' element={<Basket />} />
+        <Route  path='/catalog' element={<Catalog />} />
       </Route>
     </Routes>
   )
