@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { patchGoodsThunk } from "./patchLikedThunk"
 
 const initialState = {
     data: JSON.parse(localStorage.getItem('liked')) || [],
@@ -21,7 +22,22 @@ export const likedSlise = createSlice({
             localStorage.setItem('liked_id', JSON.stringify(state.data_id))
             localStorage.setItem('liked', JSON.stringify(state.data))
         }
+    },
+    extraReducers(builder) {
+        builder
+            .addCase(patchGoodsThunk.pending, (state) => {
+                state.status = 'loading'
+            })
+            .addCase(patchGoodsThunk.fulfilled, (state, action) => {
+                state.data = action.payload
+                state.data_id = action.payload.id
+                state.status = 'succes'
+            })
+            .addCase(patchGoodsThunk.rejected, (state) => {
+                state.status = 'fail'
+            })
     }
+
 })
 
 export const { removeLiked, addLiked } = likedSlise.actions

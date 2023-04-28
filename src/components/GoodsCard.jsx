@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addLiked, removeLiked } from "../features/liked/likedSlise";
 import { NavLink } from "react-router-dom";
 import { add_to_cart, remove_from_cart } from "../features/cart/cartSlise";
+import { patchGoodsThunk } from "../features/liked/patchLikedThunk";
+import { useEffect } from "react";
 
 const GoodsCard = ({ item }) => {
 
@@ -21,6 +23,12 @@ const GoodsCard = ({ item }) => {
             dispatch(addLiked(item))
         }
     }
+
+    useEffect(() => {
+		if (!liked_id.length) {
+			dispatch(patchGoodsThunk())
+		}   
+	}, []);
 
     const cartItem = () => {
         if (cart_id.includes(item?.id)) {

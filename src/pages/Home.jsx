@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import GoodsCard from "../components/GoodsCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SwiperComp from "../components/SwiperComp";
 import Categories from "../components/Catgories";
+import { getGoodsThunk } from "../features/goods/getGoodsThunk";
 
 
 
@@ -17,10 +18,14 @@ const Home = () => {
     const arrLen = arr.length
     let itemCat = data.map((item) => item.type);
     itemCat = [...new Set(itemCat)];
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+		if (!data.length) {
+			dispatch(getGoodsThunk())
+		}   
+	}, []);
 
-    if (count >= arrLen + 2) {
-        setCount(31)
-    }
 
     return (
         <>
