@@ -231,10 +231,12 @@ const Header = () => {
                     <img src="/img/uzumLogo.svg" alt="" />
                 </NavLink>
 
-                <div onClick={() => setIsOpen(!isOpen)} className="bg-[#EBEBFAFF] select-none h-[45px] ml-[30px] rounded-[4px] flex items-center justify-center">
-                    <img className='w-[30px] ml-[20px]' src="/img/catalogImg.svg" alt="" />
-                    <p className="text-[#3333CC] ml-[10px] mr-[25px] text-[14px]">Каталог</p>
-                </div>
+                <NavLink to={'/catalog'}>
+                    <div className="bg-[#EBEBFAFF] select-none h-[45px] ml-[30px] rounded-[4px] flex items-center justify-center">
+                        <img className='w-[30px] ml-[20px]' src="/img/catalogImg.svg" alt="" />
+                        <p className="text-[#3333CC] ml-[10px] mr-[25px] text-[14px]">Каталог</p>
+                    </div>
+                </NavLink>
 
                 <form className="flex items-center h-[45px] ml-[20px] border-[1px] border-[rgba(118, 121, 127, 0.3)] rounded-[4px] px-2">
 
