@@ -1,21 +1,41 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addLiked, removeLiked } from "../features/liked/likedSlise";
 import MiniImg from "./MiniImg";
+import { add_to_cart, decrement, increment, remove_from_cart } from "../features/cart/cartSlise";
+import { getCartThunk } from "../features/cart/postCartThunk";
+import { useEffect } from "react";
 
 const Product = () => {
 
     const data = useSelector(state => state.goods.data)
     const liked_id = useSelector(state => state.liked.data_id)
+    const cart_id = useSelector(state => state.cart.data_id)
+    const cart = useSelector(state => state.cart.data)
     const dispatch = useDispatch()
 
     const id = window.location.href.split('/').at(-1)
     const fillId = data.filter(item => item.id == id)
+    const fillCart = cart.filter(item => item.id == id)
+
+    useEffect(() => {
+        if (!cart.length) {
+            dispatch(getCartThunk())
+        }
+    }, []);
 
     const likeItem = () => {
         if (liked_id.includes(fillId[0]?.id)) {
             dispatch(removeLiked(fillId[0]?.id))
         } else {
             dispatch(addLiked(fillId[0]))
+        }
+    }
+
+    const cartItem = () => {
+        if (cart_id.includes(fillId[0]?.id)) {
+            dispatch(remove_from_cart(fillId[0]?.id))
+        } else {
+            dispatch(add_to_cart(fillId[0]))
         }
     }
 
@@ -40,15 +60,15 @@ const Product = () => {
                         <s className="text-[20px] sm:text-[24px] text-[#acacac] ml-[20px]">45 000 сум</s>
                     </div>
                     <div className="flex items-center justify-between w-[100px] rounded-[6px] border-[1px] border-[#acacac] text-[20px] mt-[30px] mb-[20px] px-2">
-                        <button>-</button>
+                        <button onClick={() => dispatch(decrement(fillCart))}>-</button>
                         <p>1</p>
-                        <button>+</button>
+                        <button onClick={() => dispatch(increment(fillCart))}>+</button>
                     </div>
                     <div className="w-full h-[1px] bg-[#acacac] mb-[30px]"></div>
                     <p className="w-[95%] text-[13px] md:text-[16px]">{fillId[0]?.description}</p>
                     <div className="flex items-center mt-[30px]">
-                        <button className=" rounded-[7px] text-[12px] md:text-[16px] text-[#fff] bg-[#7000FF] py-2  px-3 xs:px-4">Добавить в корзину</button>
-                        <button onClick={() => likeItem()} className=" rounded-[7px] text-[12px] md:text-[16px] border-[1px] border-[#7000FF] py-2  px-3 xs:px-4 text-[#7000FF] ml-[30px]">{liked_id.includes(fillId[0]?.id) ? 'убрать из избранных' : 'Добавить в избранное'}</button>
+                        <button onClick={() => cartItem()} className=" rounded-[7px] text-[12px] md:text-[16px] text-[#fff] bg-[#7000FF] py-2  px-3 xs:px-4">{cart_id.includes(fillCart[0]?.id) ? 'Убрать из карзины' : 'Добавить в корзину'}</button>
+                        <button onClick={() => likeItem()} className=" rounded-[7px] text-[12px] md:text-[16px] border-[1px] border-[#7000FF] py-2  px-3 xs:px-4 text-[#7000FF] ml-[30px]">{liked_id.includes(fillId[0]?.id) ? 'Убрать из избранных' : 'Добавить в избранное'}</button>
                     </div>
                 </div>
             </div>

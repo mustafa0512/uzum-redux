@@ -1,10 +1,28 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BasketCard from "../components/BasketCard";
 import Totalcart from "../components/TotalCart";
+import { getCartThunk } from "../features/cart/postCartThunk";
+import { useEffect } from "react";
 
 const Basket = () => {
     const cart = useSelector(state => state.cart.data)
+    const cart_id = useSelector(state => state.cart.data_id)
     const goodQt = cart.length
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (!cart_id.length) {
+            dispatch(getCartThunk())
+        }
+    }, []);
+
+    const cartItem = () => {
+        if (cart_id.includes(item?.id)) {
+            dispatch(remove_from_cart(item?.id))
+        } else {
+            dispatch(add_to_cart(item))
+        }
+    }
 
     if (cart.length === 0) {
         return (

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { patchGoodsThunk } from "./patchLikedThunk"
+import { getLikeds, patchGoodsThunk } from "./patchLikedThunk"
 
 const initialState = {
     data: JSON.parse(localStorage.getItem('liked')) || [],
@@ -34,6 +34,18 @@ export const likedSlise = createSlice({
                 state.status = 'succes'
             })
             .addCase(patchGoodsThunk.rejected, (state) => {
+                state.status = 'fail'
+            })
+        builder
+            .addCase(getLikeds.pending, (state) => {
+                state.status = 'loading'
+            })
+            .addCase(getLikeds.fulfilled, (state, action) => {
+                state.data = action.payload
+                state.data_id = action.payload
+                state.status = 'succes'
+            })
+            .addCase(getLikeds.rejected, (state) => {
                 state.status = 'fail'
             })
     }

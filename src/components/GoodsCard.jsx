@@ -2,14 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { addLiked, removeLiked } from "../features/liked/likedSlise";
 import { NavLink } from "react-router-dom";
 import { add_to_cart, remove_from_cart } from "../features/cart/cartSlise";
-import { patchGoodsThunk } from "../features/liked/patchLikedThunk";
+import { getLikeds, patchGoodsThunk } from "../features/liked/patchLikedThunk";
 import { useEffect } from "react";
 
 const GoodsCard = ({ item }) => {
 
     const liked_id = useSelector(state => state.liked.data_id)
     const cart_id = useSelector(state => state.cart.data_id)
-    // console.log(cart_id);
     const dispatch = useDispatch()
 
     const percent = Math.round(item?.price - ((item?.price * item?.salePercentage) / 100))
@@ -25,18 +24,16 @@ const GoodsCard = ({ item }) => {
     }
 
     useEffect(() => {
-		if (!liked_id.length) {
-			dispatch(patchGoodsThunk())
-		}   
-	}, []);
+        if (!liked_id.length) {
+            dispatch(getLikeds())
+        }
+    }, []);
 
     const cartItem = () => {
         if (cart_id.includes(item?.id)) {
             dispatch(remove_from_cart(item?.id))
-            console.log(item?.id);
         } else {
             dispatch(add_to_cart(item))
-            console.log(item);
         }
     }
 

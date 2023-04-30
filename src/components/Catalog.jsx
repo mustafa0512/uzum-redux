@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGoodsThunk } from "../features/goods/getGoodsThunk";
-import Categories from "../components/Catgories";
+import CatalogCat from "./CatalogCat";
 
 const Catalog = () => {
 
@@ -12,17 +12,12 @@ const Catalog = () => {
     const [from, setFrom] = useState()
     const [to, setTo] = useState()
 
-
-
     let itemCat = data.map((item) => item.type);
     itemCat = [...new Set(itemCat)];
     const filCat = itemCat.filter(item => item === catigory)
     const fildCat = data.filter(elem => elem.type == filCat)
 
-
     const priceCategory = fildCat.filter(item => item.price >= from && item.price <= to)
-    console.log(priceCategory);
-
 
     useEffect(() => {
         if (!data.length) {
@@ -41,7 +36,7 @@ const Catalog = () => {
                         itemCat.map((item, inx) => <p onClick={() => setCatigory(item)} key={inx} className="text-[#212121] mt-[10px] text-[18px]">{item}</p>)
                     }
                 </div>
-                <div className="mt-[30px]">
+                {/* <div className="mt-[30px]">
                     <form className="flex">
                         <label className="flex w-[150px] px-[10px] py-2  border-[1px] border-[] rounded-[8px] " htmlFor="">
                             <p>От</p>
@@ -52,11 +47,11 @@ const Catalog = () => {
                             <input className="w-[100px] ml-[10px] outline-none" type="number" name="to" id="to" />
                         </label>
                     </form>
-                </div>
+                </div> */}
             </div>
             <div>
                 {
-                    filCat.map((item, inx) => <Categories key={inx} item={item} />)
+                    filCat.map((item, inx) => <CatalogCat key={inx} item={item} />)
                 }
             </div>
         </div>
